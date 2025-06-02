@@ -25,7 +25,7 @@ class TestData:
         message.font = MarqueeMessageFont.SEVEN_HIGH_FANCY
         message.mode = MarqueeMessageMode.ROLL_LEFT
         return message
-    
+
     @staticmethod
     def createMarqueeMessages(marqueeMessage: MarqueeMessage) -> MarqueeMessages:
         """
@@ -36,7 +36,7 @@ class TestData:
         messages = MarqueeMessages()
         messages.add_message(marqueeMessage)
         return messages
-    
+
     @staticmethod
     def createArtistAndTitleString(artist: str = "Test Artist", title: str = "Test Title") -> str:
         """
@@ -52,7 +52,7 @@ class TestData:
             f"{MarqueeMessageColor.RAINBOW_2}{spacer}{title}"
         )
         return message
-    
+
     @staticmethod
     def createAppleMusicNowPlayingMetadata(artist: str = "Test Artist", title: str = "Test Title", nowPlaying: int = 1) -> AppleMusicNowPlayingMetadata:
         """
@@ -63,7 +63,7 @@ class TestData:
         :return: A dict object with Apple Music Now Playing data.
         """
         return AppleMusicNowPlayingMetadata(artist, title, nowPlaying)
-    
+
     @staticmethod
     def createNowPlayingMessage(artist: str = "Test Artist", title: str = "Test Title", nowPlaying: int = 1) -> str:
         """
@@ -73,31 +73,8 @@ class TestData:
         :param nowPlaying: If audio is currently being played.
         :return: A str object with Now Playing data.
         """
-        nowPlayingResult = "{"
-        f"  kMRMediaRemoteNowPlayingInfoAlbum = \"Test - EP\";"
-        f"  kMRMediaRemoteNowPlayingInfoAlbumiTunesStoreAdamIdentifier = 1680977975;"
-        f"  kMRMediaRemoteNowPlayingInfoArtist = {artist};"
-        f"  kMRMediaRemoteNowPlayingInfoArtistiTunesStoreAdamIdentifier = 718366539;"
-        f"  kMRMediaRemoteNowPlayingInfoArtworkIdentifier = dfdaba18baa070a9250d86e96590d370d892e598bcee8990307785838336c083;"
-        f"  kMRMediaRemoteNowPlayingInfoArtworkMIMEType = \"image/png\";"
-        f"  kMRMediaRemoteNowPlayingInfoComposer = \"Test Composer\";"
-        f"  kMRMediaRemoteNowPlayingInfoContentItemIdentifier = 1680977980;"
-        f"  kMRMediaRemoteNowPlayingInfoDuration = \"179.052\";"
-        f"  kMRMediaRemoteNowPlayingInfoElapsedTime = \"14.912\";"
-        f"  kMRMediaRemoteNowPlayingInfoGenre = Rock;"
-        f"  kMRMediaRemoteNowPlayingInfoIsMusicApp = 1;"
-        f"  kMRMediaRemoteNowPlayingInfoMediaType = MRMediaRemoteMediaTypeMusic;"
-        f"  kMRMediaRemoteNowPlayingInfoPlaybackRate = {nowPlaying};"
-        f"  kMRMediaRemoteNowPlayingInfoQueueIndex = 0;"
-        f"  kMRMediaRemoteNowPlayingInfoRepeatMode = 3;"
-        f"  kMRMediaRemoteNowPlayingInfoShuffleMode = 1;"
-        f"  kMRMediaRemoteNowPlayingInfoTimestamp = \"2025-04-04 22:44:35 +0000\";"
-        f"  kMRMediaRemoteNowPlayingInfoTitle = \"{title}\";"
-        f"  kMRMediaRemoteNowPlayingInfoTotalQueueCount = 20;"
-        f"  kMRMediaRemoteNowPlayingInfoTotalTrackCount = 5;"
-        f"  kMRMediaRemoteNowPlayingInfoTrackNumber = 1;"
-        f"  kMRMediaRemoteNowPlayingInfoUniqueIdentifier = 8232658841596513572;"
-        f"  kMRMediaRemoteNowPlayingInfoiTunesStoreIdentifier = 1680977980;"
-        f"  kMRMediaRemoteNowPlayingInfoiTunesStoreSubscriptionAdamIdentifier = 1680977980;"
-        "}"
+        nowPlayingResult  = f"Title: {title}"
+        f"Album: Test - EP"
+        f"Artist: {artist}"
+        f"AppName: Safari"
         return nowPlayingResult
