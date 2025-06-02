@@ -1,7 +1,7 @@
 import subprocess
 from configparser import ConfigParser
 
-from models.AppleMusicNowPlayingMetadata import AppleMusicNowPlayingMetadata
+from src.models.AppleMusicNowPlayingMetadata import AppleMusicNowPlayingMetadata
 
 """
 Constants for the Apple Music Now Playing.

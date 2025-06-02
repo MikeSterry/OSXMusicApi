@@ -1,10 +1,10 @@
 import unittest
-from test.utils.TestData import TestData
+from utils.TestData import TestData
 
-from models.MarqueeMessage import MarqueeMessage
-from models.MarqueeMessageColor import MarqueeMessageColor
-from models.MarqueeMessageFont import MarqueeMessageFont
-from models.MarqueeMessageMode import MarqueeMessageMode
+from src.models.MarqueeMessage import MarqueeMessage
+from src.models.MarqueeMessageColor import MarqueeMessageColor
+from src.models.MarqueeMessageFont import MarqueeMessageFont
+from src.models.MarqueeMessageMode import MarqueeMessageMode
 
 
 class TestMarqueeMessage(unittest.TestCase):
@@ -41,7 +41,7 @@ class TestMarqueeMessage(unittest.TestCase):
         message = MarqueeMessage()
         artist = "Artist"
         songTitle = "Song Title"
-        expectedString = TestData.createArtistAndTitleString(artist, songTitle)
+        expectedString = TestData.create_artist_and_title_string(artist, songTitle)
         result = message.create_marquee_message_from_artist_and_song_title(artist, songTitle)
         self.assertEqual(result, {
             "text": expectedString,
@@ -54,7 +54,7 @@ class TestMarqueeMessage(unittest.TestCase):
         message = MarqueeMessage()
         artist = "Artist"
         songTitle = "Song Title"
-        expectedString = TestData.createArtistAndTitleString(artist, songTitle)
+        expectedString = TestData.create_artist_and_title_string(artist, songTitle)
         result = message.convert_artist_title_to_marquee_message(artist, songTitle)
         self.assertEqual(result, expectedString)
     
@@ -62,19 +62,19 @@ class TestMarqueeMessage(unittest.TestCase):
         message = MarqueeMessage()
         artist = "A" * 100
         songTitle = "B" * 100
-        expectedString = TestData.createArtistAndTitleString(artist, songTitle)
+        expectedString = TestData.create_artist_and_title_string(artist, songTitle)
         result = message.convert_artist_title_to_marquee_message(artist, songTitle)
         self.assertEqual(result, expectedString)
     
     def test_convertArtistTitleToMarqueeMessageEmpty(self):
         message = MarqueeMessage()
-        expectedString = TestData.createArtistAndTitleString("", "")
+        expectedString = TestData.create_artist_and_title_string("", "")
         result = message.convert_artist_title_to_marquee_message("", "")
         self.assertEqual(result, expectedString)
     
     def test_convertArtistTitleToMarqueeMessageSpecialChars(self):
         specialChars = "!@#$%^&*()"
-        expectedString = TestData.createArtistAndTitleString(specialChars, specialChars)
+        expectedString = TestData.create_artist_and_title_string(specialChars, specialChars)
         message = MarqueeMessage()
         result = message.convert_artist_title_to_marquee_message(specialChars, specialChars)
         self.assertEqual(result, expectedString)
@@ -83,7 +83,7 @@ class TestMarqueeMessage(unittest.TestCase):
         message = MarqueeMessage()
         artist = "Artist"
         songTitle = "Song Title"
-        testString = TestData.createArtistAndTitleString(artist, songTitle)
+        testString = TestData.create_artist_and_title_string(artist, songTitle)
         message.set_marquee_message(testString, MarqueeMessageColor.RED, MarqueeMessageFont.SEVEN_HIGH_STD, MarqueeMessageMode.ROLL_RIGHT)
         result = message.extract_artist_and_song_title_from_marquee_message()
         self.assertEqual(result, (artist, songTitle))

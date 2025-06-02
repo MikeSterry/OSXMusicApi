@@ -3,10 +3,10 @@
 import logging
 import time
 
-from clients.AppleMusicClient import AppleMusicClient
-from clients.MarqueeApiClient import MarqueeApiClient
-from models.AppleMusicNowPlayingMetadata import AppleMusicNowPlayingMetadata
-from models.MarqueeMessages import MarqueeMessages
+from src.clients import AppleMusicClient
+from src.clients import MarqueeApiClient
+from src.models import AppleMusicNowPlayingMetadata
+from src.models.MarqueeMessages import MarqueeMessages
 
 """
     Main function to update the marquee messages based on the current playing song

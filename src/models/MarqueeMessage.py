@@ -1,8 +1,8 @@
 import json
 
-from models.MarqueeMessageColor import MarqueeMessageColor
-from models.MarqueeMessageFont import MarqueeMessageFont
-from models.MarqueeMessageMode import MarqueeMessageMode
+from src.models.MarqueeMessageColor import MarqueeMessageColor
+from src.models.MarqueeMessageFont import MarqueeMessageFont
+from src.models.MarqueeMessageMode import MarqueeMessageMode
 
 
 class MarqueeMessage:

@@ -1,6 +1,6 @@
 import unittest
 
-from models.MarqueeMessageFont import MarqueeMessageFont
+from src.models.MarqueeMessageFont import MarqueeMessageFont
 
 
 class Test_MarqueeMessageFont(unittest.TestCase):

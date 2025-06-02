@@ -1,6 +1,6 @@
 import unittest
 
-from models.MarqueeMessageColor import MarqueeMessageColor
+from src.models.MarqueeMessageColor import MarqueeMessageColor
 
 
 class Test_MarqueeMessageColor(unittest.TestCase):

@@ -1,9 +1,9 @@
-from models.AppleMusicNowPlayingMetadata import AppleMusicNowPlayingMetadata
-from models.MarqueeMessage import MarqueeMessage
-from models.MarqueeMessageColor import MarqueeMessageColor
-from models.MarqueeMessageFont import MarqueeMessageFont
-from models.MarqueeMessageMode import MarqueeMessageMode
-from models.MarqueeMessages import MarqueeMessages
+from src.models.AppleMusicNowPlayingMetadata import AppleMusicNowPlayingMetadata
+from src.models.MarqueeMessage import MarqueeMessage
+from src.models.MarqueeMessageColor import MarqueeMessageColor
+from src.models.MarqueeMessageFont import MarqueeMessageFont
+from src.models.MarqueeMessageMode import MarqueeMessageMode
+from src.models.MarqueeMessages import MarqueeMessages
 
 
 class TestData:
@@ -13,7 +13,7 @@ class TestData:
     """
 
     @staticmethod
-    def createMarqueeMessage(text: str = "") -> MarqueeMessage:
+    def create_marquee_message(text: str = "") -> MarqueeMessage:
         """
         Helper method to create a MarqueeMessage object.
         :param text: The text for the MarqueeMessage.
@@ -27,7 +27,7 @@ class TestData:
         return message
 
     @staticmethod
-    def createMarqueeMessages(marqueeMessage: MarqueeMessage) -> MarqueeMessages:
+    def create_marquee_messages(marqueeMessage: MarqueeMessage) -> MarqueeMessages:
         """
         Helper method to create a MarqueeMessages object.
         :param MarqueeMessage: The MarqueeMessage for the MarqueeMessages.
@@ -38,7 +38,7 @@ class TestData:
         return messages
 
     @staticmethod
-    def createArtistAndTitleString(artist: str = "Test Artist", title: str = "Test Title") -> str:
+    def create_artist_and_title_string(artist: str = "Test Artist", title: str = "Test Title") -> str:
         """
         Helper method to create a string from artist and title.
         :param artist: The artist name.
@@ -54,27 +54,27 @@ class TestData:
         return message
 
     @staticmethod
-    def createAppleMusicNowPlayingMetadata(artist: str = "Test Artist", title: str = "Test Title", nowPlaying: int = 1) -> AppleMusicNowPlayingMetadata:
+    def create_apple_music_now_playing_metadata(artist: str = "Test Artist", title: str = "Test Title", now_playing: int = 1) -> AppleMusicNowPlayingMetadata:
         """
         Helper method to create a dictionary with Apple Music Now Playing data.
         :param artist: The artist name.
         :param title: The song title.
-        :param nowPlaying: If audio is currently being played.
+        :param now_playing: If audio is currently being played.
         :return: A dict object with Apple Music Now Playing data.
         """
-        return AppleMusicNowPlayingMetadata(artist, title, nowPlaying)
+        return AppleMusicNowPlayingMetadata(artist, title, now_playing)
 
     @staticmethod
-    def createNowPlayingMessage(artist: str = "Test Artist", title: str = "Test Title", nowPlaying: int = 1) -> str:
+    def create_now_playing_message(artist: str = "Test Artist", title: str = "Test Title", now_playing: int = 1) -> str:
         """
         Helper method to create a NowPlayingMessage object.
         :param artist: The artist name.
         :param title: The song title.
-        :param nowPlaying: If audio is currently being played.
+        :param now_playing: If audio is currently being played.
         :return: A str object with Now Playing data.
         """
-        nowPlayingResult  = f"Title: {title}"
-        f"Album: Test - EP"
-        f"Artist: {artist}"
-        f"AppName: Safari"
-        return nowPlayingResult
+        now_playing_result  = f"""Title: {title}
+            Album: Test - EP
+            Artist: {artist}
+            AppName: Safari"""
+        return now_playing_result

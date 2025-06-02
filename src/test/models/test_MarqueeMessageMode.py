@@ -1,6 +1,6 @@
 import unittest
 
-from models.MarqueeMessageMode import MarqueeMessageMode
+from src.models.MarqueeMessageMode import MarqueeMessageMode
 
 
 class Test_MarqueeMessageMode(unittest.TestCase):

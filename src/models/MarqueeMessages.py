@@ -1,6 +1,6 @@
 import json
 
-from models.MarqueeMessage import MarqueeMessage
+from src.models.MarqueeMessage import MarqueeMessage
 
 
 class MarqueeMessages:

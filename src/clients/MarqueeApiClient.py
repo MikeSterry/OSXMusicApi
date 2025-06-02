@@ -6,8 +6,8 @@ from configparser import ConfigParser
 import requests
 from requests import Response, RequestException
 
-from models.MarqueeMessage import MarqueeMessage
-from models.MarqueeMessages import MarqueeMessages
+from src.models.MarqueeMessage import MarqueeMessage
+from src.models.MarqueeMessages import MarqueeMessages
 
 logging.basicConfig(level=logging.INFO)
 

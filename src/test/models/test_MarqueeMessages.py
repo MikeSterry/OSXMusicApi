@@ -1,7 +1,7 @@
 import unittest
-from test.utils.TestData import TestData
+from utils.TestData import TestData
 
-from models.MarqueeMessages import MarqueeMessages
+from src.models.MarqueeMessages import MarqueeMessages
 
 
 class TestMarqueeMessages(unittest.TestCase):
@@ -9,7 +9,7 @@ class TestMarqueeMessages(unittest.TestCase):
         self.marquee_messages = MarqueeMessages()
 
     def test_add_message(self):
-        message = TestData.createMarqueeMessage("Test Message")
+        message = TestData.create_marquee_message("Test Message")
         self.marquee_messages.add_message(message)
         expected = [message]
         self.assertEqual(self.marquee_messages.get_messages(), expected)
@@ -17,9 +17,9 @@ class TestMarqueeMessages(unittest.TestCase):
         self.assertEqual(len(self.marquee_messages.get_messages()), 1)
 
     def test_add_multiple_message(self):
-        message1 = TestData.createMarqueeMessage("Test Message")
-        message2 = TestData.createMarqueeMessage("Test Message2")
-        message3 = TestData.createMarqueeMessage("Test Message3")
+        message1 = TestData.create_marquee_message("Test Message")
+        message2 = TestData.create_marquee_message("Test Message2")
+        message3 = TestData.create_marquee_message("Test Message3")
         self.marquee_messages.add_message(message1)
         self.marquee_messages.add_message(message2)
         self.marquee_messages.add_message(message3)
@@ -29,9 +29,9 @@ class TestMarqueeMessages(unittest.TestCase):
         self.assertEqual(len(self.marquee_messages.get_messages()), 3)
 
     def test_get_body(self):
-        message1 = TestData.createMarqueeMessage("Test Message")
-        message2 = TestData.createMarqueeMessage("Test Message2")
-        message3 = TestData.createMarqueeMessage("Test Message3")
+        message1 = TestData.create_marquee_message("Test Message")
+        message2 = TestData.create_marquee_message("Test Message2")
+        message3 = TestData.create_marquee_message("Test Message3")
         self.marquee_messages.add_message(message1)
         self.marquee_messages.add_message(message2)
         self.marquee_messages.add_message(message3)
